@@ -16,7 +16,11 @@ namespace dotnet_webapp.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-BS68BQ4;Database=dontnet-webapi;Trusted_Connection=True;");
+            //Connection string to PostgreSql database
+            optionsBuilder.UseNpgsql(
+                "Server=localhost;Database=dotnet-webapi;Port=5432;User Id=postgres;Password=postgres;");
+            // connectrion string to SSMS 
+            //optionsBuilder.UseSqlServer(@"Server=DESKTOP-BS68BQ4;Database=dontnet-webapi;Trusted_Connection=True;");
         }
     }
 }
